@@ -12,7 +12,7 @@
   <script type="module" src="js/main.js"></script>
   <title>Frontend Mentor | Planets fact site</title>
 </head>
-<body class="mercury-color-scheme">
+<body class="mercury-color-scheme" data-planet="Mercury">
   <header>
     <div class="content-wrapper">
       <!-- Logo or fontawesome icon -->
@@ -40,7 +40,7 @@
         <ul class="content-wrapper">
           <li><button id="planet-overview-button" class="active-secondary-menu">Overview</button></li>
           <li><button id="planet-internal-structure-button">Structure</button></li>
-          <li><button id="planet-surface-geology">Surface</button></li>
+          <li><button id="planet-surface-geology-button">Surface</button></li>
         </ul>
     </nav>
       <aside id="planet-illo-container">
@@ -54,7 +54,7 @@
         shortest of all the Sun's planets. Mercury is one of four terrestrial 
         planets in the Solar System, and is a rocky body like Earth.</p>
 
-        <p id="planet-content-source">Source: <a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Wikipedia</a></p>
+        <p id="planet-content-source">Source: <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" id="planet-source">Wikipedia</a></p>
       </aside>
       <!-- Overview Content End -->
       <!-- secondary menu only available on larger screens -->

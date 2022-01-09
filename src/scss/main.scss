@@ -113,10 +113,6 @@ body {
 .default-button {
     border: 1px solid $dark-grey;
     color: $light-grey;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
     font-size: 1.09rem;
     font-family: $body-font;
     text-transform: uppercase;
@@ -128,9 +124,7 @@ body {
 }
 /* mobile menu */ 
 div.content-wrapper {
-  display: flex; /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */
-  justify-content: space-between;
-  align-items: center;
+    @include flexbox(row, nowrap); /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */
 }
   .hide-menu {
     display: none; /* hide navigation menu by default */
@@ -215,9 +209,7 @@ border-bottom: 1px solid $dark-grey;
 #secondary-menu {
     border-bottom: 1px solid $dark-grey;
     ul {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+        @include flexbox(row, nowrap);
         padding: 0px !important;
     }
     li {
@@ -265,6 +257,7 @@ border-bottom: 1px solid $dark-grey;
                 font-family: FontAwesome;
                 position: absolute;
                 padding-left: 3px;
+                z-index: -1;
             }
             &:hover {
                 color: $white;
@@ -278,6 +271,9 @@ border-bottom: 1px solid $dark-grey;
 }
 /* container for planet data */
 .planet-data-container {
+    .default-button {
+        @include flexbox(row, nowrap, space-between, center);
+    }
     padding: 15px 0px 40px 0px;
     h2, h4 {
         margin: 0;

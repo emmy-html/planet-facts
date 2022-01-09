@@ -121,6 +121,10 @@ h4 {
 }
 
 /* button styles */
+/* universal flexbox styles */
+/* shell for all color schemes */
+/* universal flexbox styles */
+/* shell for all color schemes */
 /* individual color schemes */
 body.mercury-color-scheme {
   /* secondary menu */
@@ -128,7 +132,7 @@ body.mercury-color-scheme {
 body.mercury-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #419EBB;
+  border: 4px solid transparent;
 }
 body.mercury-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -146,7 +150,7 @@ body.venus-color-scheme {
 body.venus-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #EDA249;
+  border: 4px solid transparent;
 }
 body.venus-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -164,7 +168,7 @@ body.earth-color-scheme {
 body.earth-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #6f2ed6;
+  border: 4px solid transparent;
 }
 body.earth-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -182,7 +186,7 @@ body.mars-color-scheme {
 body.mars-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #D14C32;
+  border: 4px solid transparent;
 }
 body.mars-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -200,7 +204,7 @@ body.jupiter-color-scheme {
 body.jupiter-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #D83A34;
+  border: 4px solid transparent;
 }
 body.jupiter-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -218,7 +222,7 @@ body.saturn-color-scheme {
 body.saturn-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #CD5120;
+  border: 4px solid transparent;
 }
 body.saturn-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -236,7 +240,7 @@ body.uranus-color-scheme {
 body.uranus-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #1ec2a4;
+  border: 4px solid transparent;
 }
 body.uranus-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -254,7 +258,7 @@ body.neptune-color-scheme {
 body.neptune-color-scheme #secondary-menu button {
   color: #838391;
   cursor: pointer;
-  border: 0px solid #2d68f0;
+  border: 4px solid transparent;
 }
 body.neptune-color-scheme #secondary-menu button:hover {
   color: #FFFFFF;
@@ -327,10 +331,6 @@ body::-webkit-scrollbar {
 .default-button {
   border: 1px solid #38384F;
   color: #838391;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
   font-size: 1.09rem;
   font-family: "Spartan", sans-serif;
   text-transform: uppercase;
@@ -344,9 +344,10 @@ body::-webkit-scrollbar {
 /* mobile menu */
 div.content-wrapper {
   display: flex;
-  /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */
 }
 
 .hide-menu {
@@ -452,6 +453,7 @@ header h2 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
   padding: 0px !important;
 }
 #secondary-menu li {
@@ -504,6 +506,7 @@ header h2 {
   font-family: FontAwesome;
   position: absolute;
   padding-left: 3px;
+  z-index: -1;
 }
 .planet-general-content #planet-content-source a:link:hover,
 .planet-general-content #planet-content-source a:visited:hover {
@@ -518,6 +521,12 @@ header h2 {
 /* container for planet data */
 .planet-data-container {
   padding: 15px 0px 40px 0px;
+}
+.planet-data-container .default-button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 .planet-data-container h2, .planet-data-container h4 {
   margin: 0;
