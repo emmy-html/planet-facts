@@ -25,3 +25,28 @@ body.uranus-color-scheme {
 body.neptune-color-scheme {
     @include color-scheme($blue);
 }
+/* header hover styles */
+header nav ul li#mercury-nav:hover {
+    background: $light-blue;
+} 
+header nav ul li#venus-nav:hover {
+    background: $yellow;
+} 
+header nav ul li#earth-nav:hover {
+    background: $purple;
+}
+header nav ul li#mars-nav:hover {
+    background: $soft-red;
+} 
+header nav ul li#jupiter-nav:hover {
+    background: $red;
+} 
+header nav ul li#saturn-nav:hover {
+    background: $orange;
+} 
+header nav ul li#uranus-nav:hover {
+    background: $green;
+} 
+header nav ul li#neptune-nav:hover {
+    background: $blue;
+}

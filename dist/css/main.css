@@ -122,45 +122,200 @@ h4 {
 
 /* button styles */
 /* individual color schemes */
-body.mercury-color-scheme nav ul li:hover {
-  color: pink;
+body.mercury-color-scheme {
+  /* secondary menu */
+}
+body.mercury-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #419EBB;
+}
+body.mercury-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #419EBB;
+}
+body.mercury-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #419EBB;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
 }
 
-body.venus-color-scheme nav ul li:hover {
-  color: pink;
+body.venus-color-scheme {
+  /* secondary menu */
+}
+body.venus-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #EDA249;
+}
+body.venus-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #EDA249;
+}
+body.venus-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #EDA249;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
 }
 
-body.earth-color-scheme nav ul li:hover {
-  color: pink;
+body.earth-color-scheme {
+  /* secondary menu */
+}
+body.earth-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #6f2ed6;
+}
+body.earth-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #6f2ed6;
+}
+body.earth-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #6f2ed6;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
 }
 
-body.mars-color-scheme nav ul li:hover {
-  color: pink;
+body.mars-color-scheme {
+  /* secondary menu */
+}
+body.mars-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #D14C32;
+}
+body.mars-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #D14C32;
+}
+body.mars-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #D14C32;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
 }
 
-body.jupiter-color-scheme nav ul li:hover {
-  color: pink;
+body.jupiter-color-scheme {
+  /* secondary menu */
+}
+body.jupiter-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #D83A34;
+}
+body.jupiter-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #D83A34;
+}
+body.jupiter-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #D83A34;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
 }
 
-body.saturn-color-scheme nav ul li:hover {
-  color: pink;
+body.saturn-color-scheme {
+  /* secondary menu */
+}
+body.saturn-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #CD5120;
+}
+body.saturn-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #CD5120;
+}
+body.saturn-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #CD5120;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
 }
 
-body.uranus-color-scheme nav ul li:hover {
-  color: pink;
+body.uranus-color-scheme {
+  /* secondary menu */
+}
+body.uranus-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #1ec2a4;
+}
+body.uranus-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #1ec2a4;
+}
+body.uranus-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #1ec2a4;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
 }
 
-body.neptune-color-scheme nav ul li:hover {
-  color: pink;
+body.neptune-color-scheme {
+  /* secondary menu */
+}
+body.neptune-color-scheme #secondary-menu button {
+  color: #838391;
+  cursor: pointer;
+  border: 0px solid #2d68f0;
+}
+body.neptune-color-scheme #secondary-menu button:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #2d68f0;
+}
+body.neptune-color-scheme #secondary-menu button.active-secondary-menu {
+  border-bottom: 4px solid #2d68f0;
+  border-bottom-width: 105%;
+  color: #FFFFFF;
+}
+
+/* header hover styles */
+header nav ul li#mercury-nav:hover {
+  background: #419EBB;
+}
+
+header nav ul li#venus-nav:hover {
+  background: #EDA249;
+}
+
+header nav ul li#earth-nav:hover {
+  background: #6f2ed6;
+}
+
+header nav ul li#mars-nav:hover {
+  background: #D14C32;
+}
+
+header nav ul li#jupiter-nav:hover {
+  background: #D83A34;
+}
+
+header nav ul li#saturn-nav:hover {
+  background: #CD5120;
+}
+
+header nav ul li#uranus-nav:hover {
+  background: #1ec2a4;
+}
+
+header nav ul li#neptune-nav:hover {
+  background: #2d68f0;
 }
 
 /* universal styles */
 body {
   background: #070724;
+  background-image: url("../assets/background-stars.svg");
+  background-size: cover;
   color: #FFFFFF;
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
 }
 
 .content-wrapper {
@@ -168,6 +323,25 @@ body {
   /* adds a wrapper around our content */
 }
 
+/* default buttons */
+.default-button {
+  border: 1px solid #38384F;
+  color: #838391;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.09rem;
+  font-family: "Spartan", sans-serif;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  margin: 10px 0px;
+}
+.default-button span {
+  color: #FFFFFF;
+}
+
+/* mobile menu */
 div.content-wrapper {
   display: flex;
   /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */
@@ -192,7 +366,7 @@ div.content-wrapper {
     opacity: 1;
   }
 }
-nav {
+header nav {
   background: #070724;
   width: 100%;
   height: 100%;
@@ -203,23 +377,26 @@ nav {
   top: 56px;
 }
 
-nav ul {
+header nav ul {
   list-style-type: none;
   margin: 0px !important;
   padding: 0px 0px 0px 0px !important;
   /* override any padding that would throw off the layout of the menu */
 }
 
-nav ul li {
+header nav ul li {
   background: #070724;
   border-bottom: 1px solid #38384F;
   display: block !important;
   text-align: left;
   padding: 25px 0px;
 }
+header nav ul li:last-of-type {
+  border-bottom: none;
+}
 
-nav ul li a:link,
-nav ul li a:visited {
+header nav ul li a:link,
+header nav ul li a:visited {
   color: #FFFFFF;
   font-family: "Spartan", sans-serif;
   font-size: 1.36rem;
@@ -228,8 +405,8 @@ nav ul li a:visited {
   text-transform: uppercase;
   margin-left: 25px;
 }
-nav ul li a:link::after,
-nav ul li a:visited::after {
+header nav ul li a:link::after,
+header nav ul li a:visited::after {
   content: "\f054";
   /* chevron arrow after each link */
   color: #38384F;
@@ -237,50 +414,18 @@ nav ul li a:visited::after {
   position: absolute;
   right: 25px;
 }
-nav ul li a:link::after:hover,
-nav ul li a:visited::after:hover {
+header nav ul li a:link::after:hover,
+header nav ul li a:visited::after:hover {
   color: #FFFFFF;
 }
 
-nav ul li:hover {
+header nav ul li:hover {
   cursor: pointer;
   transition: 0.3s background-color;
 }
-nav ul li:hover a:link::after,
-nav ul li:hover a:visited::after {
+header nav ul li:hover a:link::after,
+header nav ul li:hover a:visited::after {
   color: #FFFFFF;
-}
-
-nav ul li#mercury-nav:hover {
-  background: #419EBB;
-}
-
-nav ul li#venus-nav:hover {
-  background: #EDA249;
-}
-
-nav ul li#earth-nav:hover {
-  background: #6f2ed6;
-}
-
-nav ul li#mars-nav:hover {
-  background: #D14C32;
-}
-
-nav ul li#jupiter-nav:hover {
-  background: #D83A34;
-}
-
-nav ul li#saturn-nav:hover {
-  background: #CD5120;
-}
-
-nav ul li#uranus-nav:hover {
-  background: #1ec2a4;
-}
-
-nav ul li#neptune-nav:hover {
-  background: #2d68f0;
 }
 
 header {
@@ -297,6 +442,90 @@ header h2 {
 }
 #menu-toggle-button:hover {
   color: #838391;
+}
+
+/* secondary mobile navigation */
+#secondary-menu {
+  border-bottom: 1px solid #38384F;
+}
+#secondary-menu ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0px !important;
+}
+#secondary-menu li {
+  list-style-type: none;
+}
+#secondary-menu button {
+  background: #070724;
+  font-family: "Spartan", sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 1.93px;
+  outline: none;
+  padding: 20px 0px !important;
+  text-transform: uppercase;
+}
+
+/* planet illustration */
+#planet-illo-container {
+  padding: 70px;
+}
+#planet-illo-container img#planet-illo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+}
+
+/* container for content who's paragraph content will be switched out */
+.planet-general-content #planet-name,
+.planet-general-content p {
+  /* paragraph container title */
+  text-align: center;
+}
+.planet-general-content #planet-content-source {
+  font-size: 1.09rem;
+  color: #838391;
+  padding-top: 20px;
+}
+.planet-general-content #planet-content-source a:link,
+.planet-general-content #planet-content-source a:visited {
+  color: #838391;
+  font-weight: 600;
+}
+.planet-general-content #planet-content-source a:link::after,
+.planet-general-content #planet-content-source a:visited::after {
+  content: "\f360";
+  /* external link symbol after each link */
+  color: #838391;
+  font-family: FontAwesome;
+  position: absolute;
+  padding-left: 3px;
+}
+.planet-general-content #planet-content-source a:link:hover,
+.planet-general-content #planet-content-source a:visited:hover {
+  color: #FFFFFF;
+  transition: 0.3s all;
+}
+.planet-general-content #planet-content-source a:link:hover::after,
+.planet-general-content #planet-content-source a:visited:hover::after {
+  color: #FFFFFF;
+}
+
+/* container for planet data */
+.planet-data-container {
+  padding: 15px 0px 40px 0px;
+}
+.planet-data-container h2, .planet-data-container h4 {
+  margin: 0;
+}
+
+/* hide large screen secondary menu buttons on mobile */
+#large-screen-secondary-menu {
+  display: none;
 }
 
 /* media queries for displaying our menu properly on large screens, change min-width to 768px for normal function */

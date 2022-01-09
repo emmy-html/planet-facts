@@ -34,63 +34,54 @@
       <i class="fas fa-bars fa-2x" id="menu-toggle-button"></i>
     </div>
   </header>
-  <article id="planet-container">
-   <!-- <nav id="secondary-menu">
-      <ul>
-        <li>Overview</li>
-        <li>Internal Structure</li>
-        <li>Surface Geology</li>
-      </ul>
-    </nav> -->
-    <h1 id="planet-name">Mercury</h1>
-    <!-- Overview Content Start -->
+  <main>
+    <article id="planet-container">
+    <nav id="secondary-menu">
+        <ul class="content-wrapper">
+          <li><button id="planet-overview-button" class="active-secondary-menu">Overview</button></li>
+          <li><button id="planet-internal-structure-button">Structure</button></li>
+          <li><button id="planet-surface-geology">Surface</button></li>
+        </ul>
+    </nav>
+      <aside id="planet-illo-container">
+        <img src="assets/planet-mercury.svg" id="planet-illo" />
+      </aside>
+      <aside class="content-wrapper planet-general-content">
+        <h1 id="planet-name">Mercury</h1>
+        <!-- Overview Content Start -->
+        <p id="planet-content-container">Mercury is the smallest planet in the Solar System and the closest 
+        to the Sun. Its orbit around the Sun takes 87.97 Earth days, the 
+        shortest of all the Sun's planets. Mercury is one of four terrestrial 
+        planets in the Solar System, and is a rocky body like Earth.</p>
 
-    <p id="planet-overview">Mercury is the smallest planet in the Solar System and the closest 
-    to the Sun. Its orbit around the Sun takes 87.97 Earth days, the 
-    shortest of all the Sun's planets. Mercury is one of four terrestrial 
-    planets in the Solar System, and is a rocky body like Earth.</p>
-
-    <p id="planet-source">Source : Wikipedia <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet) --></p>
-
-    <!-- Overview Content End -->
-
-    <!-- Internal Structure Content Start -->
-
-    <p id="planet-internal-structure">Mercury appears to have a solid silicate crust and mantle overlying a 
-    solid, iron sulfide outer core layer, a deeper liquid core layer, and 
-    a solid inner core. The planet's density is the second highest in the 
-    Solar System at 5.427 g/cm3 , only slightly less than Earth's density.</p>
-
-    <p id="planet-internal-structure-source">Source : Wikipedia <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure --></p>
-
-    <!-- Internal Structure Content End -->
-
-    <!-- Surface Geology Content Start -->
-
-    <p id="planet-surface-geology">Mercury's surface is similar in appearance to that of the Moon, showing 
-    extensive mare-like plains and heavy cratering, indicating that it has 
-    been geologically inactive for billions of years. It is more heterogeneous 
-    than either Mars's or the Moon’s.</p>
-
-    <p id="planet-surface-geology-source">Source : Wikipedia <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet)#Surface_geology --></p>
-
-    <!-- Surface Geology Content End -->
-
-    <button>01 Overview</button>
-    <button>02 Internal Structure</button>
-    <button>03 Surface Geology</button>
-
-    <h4>Rotation Time</h4>
-    <h2 id="planet-rotation-time">58.6 Days</h2>
-
-    <h4>Revolution Time</h4>
-    <h2 id="planet-revolution-time">87.97 Days</h2>
-
-    <h4>Radius</h4>
-    <h2 id="planet-radius">2,439.7 KM</h2>
-
-    <h4>Average Temp.</h4>
-    <h2 id="planet-avg-temp">430°c</h2>
-  </article>
+        <p id="planet-content-source">Source: <a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Wikipedia</a></p>
+      </aside>
+      <!-- Overview Content End -->
+      <!-- secondary menu only available on larger screens -->
+      <nav id="large-screen-secondary-menu">
+        <button>01 Overview</button>
+        <button>02 Internal Structure</button>
+        <button>03 Surface Geology</button>
+      </nav>
+      <aside class="content-wrapper planet-data-container">
+        <div class="default-button">
+          <h4>Rotation Time</h4>
+          <span><h2 id="planet-rotation-time">58.6 Days</h2></span>
+        </div>
+        <div class="default-button">
+          <h4>Revolution Time</h4>
+          <span><h2 id="planet-revolution-time">87.97 Days</h2></span>
+        </div>
+        <div class="default-button">
+          <h4>Radius</h4>
+          <span><h2 id="planet-radius">2,439.7 KM</h2></span>
+        </div>
+        <div class="default-button">
+          <h4>Average Temp.</h4>
+          <span><h2 id="planet-avg-temp">430°c</h2></span>
+        </div>
+      </aside>
+    </article>
+  </main>
 </body>
 </html>

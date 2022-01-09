@@ -94,14 +94,39 @@ textarea {
 /* universal styles */
 body {
     background: $dark-blue;
+    background-image: url('../assets/background-stars.svg');
+    background-size: cover;
     color: $white;
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+    &::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
 }
 .content-wrapper {
   margin: 0px 25px; /* adds a wrapper around our content */
 }
+/* default buttons */
+.default-button {
+    border: 1px solid $dark-grey;
+    color: $light-grey;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.09rem;
+    font-family: $body-font;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    margin: 10px 0px;
+    span {
+        color: $white;
+    }
+}
+/* mobile menu */ 
 div.content-wrapper {
   display: flex; /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */
   justify-content: space-between;
@@ -121,7 +146,7 @@ div.content-wrapper {
     opacity: 1;
   }
 }
-nav {
+header nav {
   background: $dark-blue;
   width: 100%;
   height: 100%;
@@ -130,20 +155,23 @@ nav {
   left: 0;
   top: 56px;
 }
-nav ul {
+header nav ul {
   list-style-type: none;
   margin: 0px !important;
   padding: 0px 0px 0px 0px !important; /* override any padding that would throw off the layout of the menu */
 }
-nav ul li {
+header nav ul li {
     background: $dark-blue;
     border-bottom: 1px solid $dark-grey;
     display: block !important;
     text-align: left;
     padding: 25px 0px;
+    &:last-of-type {
+        border-bottom: none;
+    }
 }
-nav ul li a:link,
-nav ul li a:visited {
+header nav ul li a:link,
+header nav ul li a:visited {
     color: $white;
   font-family: $body-font;
   font-size: 1.36rem;
@@ -162,37 +190,13 @@ nav ul li a:visited {
       }
   }
 }
-nav ul li:hover {
+header nav ul li:hover {
     cursor: pointer;
     transition: .3s background-color;
     a:link::after,
     a:visited::after {
         color: $white;
     }
-}
-nav ul li#mercury-nav:hover {
-    background: $light-blue;
-} 
-nav ul li#venus-nav:hover {
-    background: $yellow;
-} 
-nav ul li#earth-nav:hover {
-    background: $purple;
-}
-nav ul li#mars-nav:hover {
-    background: $soft-red;
-} 
-nav ul li#jupiter-nav:hover {
-    background: $red;
-} 
-nav ul li#saturn-nav:hover {
-    background: $orange;
-} 
-nav ul li#uranus-nav:hover {
-    background: $green;
-} 
-nav ul li#neptune-nav:hover {
-    background: $blue;
 }
 header {
 border-bottom: 1px solid $dark-grey;
@@ -206,6 +210,82 @@ border-bottom: 1px solid $dark-grey;
     &:hover {
         color: $light-grey;
     }
+}
+/* secondary mobile navigation */
+#secondary-menu {
+    border-bottom: 1px solid $dark-grey;
+    ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 0px !important;
+    }
+    li {
+        list-style-type: none;
+    }
+    button {
+        background: $dark-blue;
+        font-family: $body-font;
+        font-weight: 600;
+        font-size: .70rem;
+        letter-spacing: 1.93px;
+        outline: none;
+        padding: 20px 0px !important;
+        text-transform: uppercase;
+    }
+}
+/* planet illustration */
+#planet-illo-container {
+    padding: 70px;
+    img#planet-illo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: auto;
+    }
+}
+/* container for content who's paragraph content will be switched out */
+.planet-general-content {
+    #planet-name, /* planet title */
+    p { /* paragraph container title */
+        text-align: center;
+    }
+    #planet-content-source {
+        font-size: 1.09rem;
+        color: $light-grey;
+        padding-top: 20px;
+        a:link,
+        a:visited {
+            color: $light-grey;
+            font-weight: 600;
+            &::after {
+                content: "\f360"; /* external link symbol after each link */ 
+                color: $light-grey;
+                font-family: FontAwesome;
+                position: absolute;
+                padding-left: 3px;
+            }
+            &:hover {
+                color: $white;
+                transition: .3s all;
+                &::after {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+/* container for planet data */
+.planet-data-container {
+    padding: 15px 0px 40px 0px;
+    h2, h4 {
+        margin: 0;
+    }
+}
+/* hide large screen secondary menu buttons on mobile */ 
+#large-screen-secondary-menu {
+    display: none;
 }
 /* media queries for displaying our menu properly on large screens, change min-width to 768px for normal function */
 @media screen and (min-width: 1600px) {
