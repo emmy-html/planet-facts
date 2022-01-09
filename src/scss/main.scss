@@ -11,13 +11,13 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-   html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-  }
-  
-  /*
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
    *
@@ -26,160 +26,214 @@
    *
    * Customize the background color to match your design.
    */
-  
-  ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-  
-  ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-  }
-  
-  /*
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
    * A better looking default horizontal rule
    */
-  
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-  }
-  
-  /*
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
    * Remove the gap between audio, canvas, iframes,
    * images, videos and the bottom of their containers:
    * https://github.com/h5bp/html5-boilerplate/issues/440
    */
-  
-  audio,
-  canvas,
-  iframe,
-  img,
-  svg,
-  video {
-    vertical-align: middle;
-  }
-  
-  /*
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
    * Remove default fieldset styles.
    */
-  
-  fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /*
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
    * Allow only vertical resizing of textareas.
    */
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  /* ==========================================================================
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
      Author's custom styles
      ========================================================================== */
 
-     @import "colors";
-     @import "fonts";
-
+@import "colors";
+@import "fonts";
+@import "mixins";
+@import "color_schemes";
 /* universal styles */
 body {
-
+    background: $dark-blue;
+    color: $white;
+    margin: 0;
+    padding: 0;
 }
-  .content-wrapper {
-    margin: 0px 25px; /* adds a wrapper around our content */
-  }
-  header .content-wrapper {
-    display: flex; /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */ 
-    justify-content: space-between;
-    align-items: center;
-  }
+.content-wrapper {
+  margin: 0px 25px; /* adds a wrapper around our content */
+}
+div.content-wrapper {
+  display: flex; /* turn our content wrapper into a flex container, taking advantage of the default flex-direction: row, which causes items to align side by side */
+  justify-content: space-between;
+  align-items: center;
+}
   .hide-menu {
     display: none; /* hide navigation menu by default */
   }
-  .fade-in {
-    animation: fadeIn .5s 1;
+.fade-in {
+  animation: fadeIn 0.5s 1;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+  to {
+    opacity: 1;
+  }
+}
+nav {
+  background: $dark-blue;
+  width: 100%;
+  height: 100%;
+  position: absolute; /* absolute positioning will stop the menu from disrupting the flow of the page */
+  margin: 0px !important;
+  left: 0;
+  top: 56px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0px !important;
+  padding: 0px 0px 0px 0px !important; /* override any padding that would throw off the layout of the menu */
+}
+nav ul li {
+    background: $dark-blue;
+    border-bottom: 1px solid $dark-grey;
+    display: block !important;
+    text-align: left;
+    padding: 25px 0px;
+}
+nav ul li a:link,
+nav ul li a:visited {
+    color: $white;
+  font-family: $body-font;
+  font-size: 1.36rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 25px;
+  &::after {
+      content: "\f054"; /* chevron arrow after each link */ 
+      color: $dark-grey;
+      font-family: FontAwesome;
+      position: absolute;
+      right: 25px;
+      &:hover {
+          color: $white;
+      }
+  }
+}
+nav ul li:hover {
+    cursor: pointer;
+    transition: .3s background-color;
+    a:link::after,
+    a:visited::after {
+        color: $white;
     }
-    to {
-      opacity: 1;
-    }
+}
+nav ul li#mercury-nav:hover {
+    background: $light-blue;
+} 
+nav ul li#venus-nav:hover {
+    background: $yellow;
+} 
+nav ul li#earth-nav:hover {
+    background: $purple;
+}
+nav ul li#mars-nav:hover {
+    background: $soft-red;
+} 
+nav ul li#jupiter-nav:hover {
+    background: $red;
+} 
+nav ul li#saturn-nav:hover {
+    background: $orange;
+} 
+nav ul li#uranus-nav:hover {
+    background: $green;
+} 
+nav ul li#neptune-nav:hover {
+    background: $blue;
+}
+header {
+border-bottom: 1px solid $dark-grey;
+  #menu-toggle-button,
+  h2 {
+    z-index: 999; /* make sure the menu button stays on top */
+  }
+}
+
+/* media queries for displaying our menu properly on large screens, change min-width to 768px for normal function */
+@media screen and (min-width: 1600px) {
+  .hide-menu {
+    display: block !important; /* override hidden navigation on large screens */
+  }
+  #menu-toggle-button {
+    display: none; /* hide hamburger button */
   }
   nav {
-    width: 100%;
-    position: absolute; /* absolute positioning will stop the menu from disrupting the flow of the page */
-    margin: 0px !important;
-    top: 0;
-    left: 0;
-  }
-  nav ul {
-    list-style-type: none;
-    padding: 15px 10px 0px 0px !important; /* override any padding that would throw off the layout of the menu */
+    left: auto;
+    right: 20px; /* use absolute positioning to push links to right side of container */
+    width: auto; /* reset width */
   }
   nav ul li {
-    margin-bottom: 5px;
-    text-align: center;
+    display: inline-block; /* display links side by side */
+    margin-left: 20px;
   }
-  nav ul li a:link,
-  nav ul li a:visited {
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  nav ul li a:link:hover {
-    border-bottom: 3px solid #D68C45;
-  }
-  header {
-    #menu-toggle-button,
-    h2 {
-      z-index: 999; /* make sure the menu button stays on top */
-    }
-  }
+}
 
-  /* media queries for displaying our menu properly on large screens, change min-width to 768px for normal function */ 
-  @media screen and (min-width: 1600px) {
-    .hide-menu {
-      display: block !important; /* override hidden navigation on large screens */ 
-    }
-    #menu-toggle-button {
-      display: none; /* hide hamburger button */
-    }
-    nav {
-      left: auto; 
-      right: 20px; /* use absolute positioning to push links to right side of container */
-      width: auto; /* reset width */ 
-    }
-    nav ul li {
-      display: inline-block; /* display links side by side */ 
-      margin-left: 20px;
-    }
-  }
-
-  /* ==========================================================================
+/* ==========================================================================
      Helper classes
      ========================================================================== */
-  
-  /*
+
+/*
    * Hide visually and from screen readers
    */
-  
-  .hidden,
-  [hidden] {
-    display: none !important;
-  }
-  
-  /*
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
    * Hide only visually, but have it available for screen readers:
    * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
    *
@@ -187,46 +241,46 @@ body {
    *    causes content to wrap 1 word per line:
    *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
    */
-  
-  .sr-only {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    /* 1 */
-  }
-  
-  /*
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
    * Extends the .sr-only class to allow the element
    * to be focusable when navigated to via the keyboard:
    * https://www.drupal.org/node/897638
    */
-  
-  .sr-only.focusable:active,
-  .sr-only.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    white-space: inherit;
-    width: auto;
-  }
-  
-  /*
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
    * Hide visually and from screen readers, but maintain layout
    */
-  
-  .invisible {
-    visibility: hidden;
-  }
-  
-  /*
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
    * Clearfix: contain floats
    *
    * For modern browsers
@@ -237,105 +291,105 @@ body {
    * 2. The use of `table` rather than `block` is only necessary if using
    *    `:before` to contain the top-margins of child elements.
    */
-  
-  .clearfix::before,
-  .clearfix::after {
-    content: " ";
-    display: table;
-  }
-  
-  .clearfix::after {
-    clear: both;
-  }
-  
-  /* ==========================================================================
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
      EXAMPLE Media Queries for Responsive Design.
      These examples override the primary ('mobile first') styles.
      Modify as content requires.
      ========================================================================== */
-  
-  @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-  }
-  
-  @media print,
-    (-webkit-min-device-pixel-ratio: 1.25),
-    (min-resolution: 1.25dppx),
-    (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-  }
-  
-  /* ==========================================================================
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
      Print styles.
      Inlined to avoid the additional HTTP request:
      https://www.phpied.com/delay-loading-your-print-css/
      ========================================================================== */
-  
-  @media print {
-    *,
-    *::before,
-    *::after {
-      background: #fff !important;
-      color: #000 !important;
-      /* Black prints faster */
-      box-shadow: none !important;
-      text-shadow: none !important;
-    }
-  
-    a,
-    a:visited {
-      text-decoration: underline;
-    }
-  
-    a[href]::after {
-      content: " (" attr(href) ")";
-    }
-  
-    abbr[title]::after {
-      content: " (" attr(title) ")";
-    }
-  
-    /*
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]::after,
-    a[href^="javascript:"]::after {
-      content: "";
-    }
-  
-    pre {
-      white-space: pre-wrap !important;
-    }
-  
-    pre,
-    blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid;
-    }
-  
-    /*
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
      * Printing Tables:
      * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-    thead {
-      display: table-header-group;
-    }
-  
-    tr,
-    img {
-      page-break-inside: avoid;
-    }
-  
-    p,
-    h2,
-    h3 {
-      orphans: 3;
-      widows: 3;
-    }
-  
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
-  }  
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

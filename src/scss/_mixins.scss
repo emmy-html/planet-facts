@@ -1,0 +1,5 @@
+@mixin color-scheme ($planet-color) {
+    nav ul li:hover {
+        color: pink;
+    }   
+}

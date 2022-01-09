@@ -1,0 +1,6 @@
+@import "colors";
+@import "mixins";
+/* individual color schemes */
+body.mercury-color-scheme {
+    @include color-scheme($light-blue);
+}
