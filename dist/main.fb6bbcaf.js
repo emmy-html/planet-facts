@@ -128,8 +128,12 @@ function hamburger() {
     // if the menu is hidden, then display it
     menu.style.display = 'block';
     menu.classList.add('fade-in'); // add a fade effect when menu appears on screen
+
+    menuButton.style.color = '#838391'; // change color to show menu is open
   } else {
     menu.style.display = 'none'; // if the menu is open, hide it again
+
+    menuButton.style.color = '#FFFFFF'; // change color to show menu is closed
   }
 }
 

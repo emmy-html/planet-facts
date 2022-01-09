@@ -126,12 +126,41 @@ body.mercury-color-scheme nav ul li:hover {
   color: pink;
 }
 
+body.venus-color-scheme nav ul li:hover {
+  color: pink;
+}
+
+body.earth-color-scheme nav ul li:hover {
+  color: pink;
+}
+
+body.mars-color-scheme nav ul li:hover {
+  color: pink;
+}
+
+body.jupiter-color-scheme nav ul li:hover {
+  color: pink;
+}
+
+body.saturn-color-scheme nav ul li:hover {
+  color: pink;
+}
+
+body.uranus-color-scheme nav ul li:hover {
+  color: pink;
+}
+
+body.neptune-color-scheme nav ul li:hover {
+  color: pink;
+}
+
 /* universal styles */
 body {
   background: #070724;
   color: #FFFFFF;
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 }
 
 .content-wrapper {
@@ -261,6 +290,13 @@ header #menu-toggle-button,
 header h2 {
   z-index: 999;
   /* make sure the menu button stays on top */
+}
+
+#menu-toggle-button {
+  cursor: pointer;
+}
+#menu-toggle-button:hover {
+  color: #838391;
 }
 
 /* media queries for displaying our menu properly on large screens, change min-width to 768px for normal function */

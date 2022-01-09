@@ -4,3 +4,24 @@
 body.mercury-color-scheme {
     @include color-scheme($light-blue);
 }
+body.venus-color-scheme {
+    @include color-scheme($yellow);
+}
+body.earth-color-scheme {
+    @include color-scheme($purple);
+}
+body.mars-color-scheme {
+    @include color-scheme($soft-red);
+}
+body.jupiter-color-scheme {
+    @include color-scheme($red);
+}
+body.saturn-color-scheme {
+    @include color-scheme($orange);
+}
+body.uranus-color-scheme {
+    @include color-scheme($green);
+}
+body.neptune-color-scheme {
+    @include color-scheme($blue);
+}

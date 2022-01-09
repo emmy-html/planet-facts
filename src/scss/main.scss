@@ -97,6 +97,7 @@ body {
     color: $white;
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
 }
 .content-wrapper {
   margin: 0px 25px; /* adds a wrapper around our content */
@@ -200,7 +201,12 @@ border-bottom: 1px solid $dark-grey;
     z-index: 999; /* make sure the menu button stays on top */
   }
 }
-
+#menu-toggle-button {
+    cursor: pointer;
+    &:hover {
+        color: $light-grey;
+    }
+}
 /* media queries for displaying our menu properly on large screens, change min-width to 768px for normal function */
 @media screen and (min-width: 1600px) {
   .hide-menu {
