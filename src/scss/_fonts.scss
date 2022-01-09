@@ -1,0 +1,42 @@
+$heading-font: 'Antonio', sans-serif;
+$body-font: 'Spartan', sans-serif;
+
+h1, h2 {
+    font-family: $heading-font;
+    font-weight: 500;
+}
+h3, h4 {
+    font-weight: 600;
+}
+h3, h4, body {
+    font-family: $body-font;
+}
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+}
+/* typography scale */
+body {
+    font-size: 11px;
+    line-height: 22px;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 20px;
+    letter-spacing: -1.5px;
+}
+h3 {
+    font-size: 9px;
+    letter-spacing: 2.6px;
+}
+h4 {
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+/* button styles */
+
+button {
+    
+}
